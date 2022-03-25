@@ -79,5 +79,27 @@ namespace CMP1903M_Assessment_1_Base_Code
         {
             return values;
         }
+
+        //Method: LongWords
+        //Arguments: string
+        //Returns: list of strings
+        //It looks for words longer than 5 characters and then adds it to a string.
+        public string LongWords(string longwords)
+        {
+            string line = longwords;
+            string[] words = line.Split(new[] { ' ' }, StringSplitOptions.None);
+            string longword = "";
+            int longwordLimit = 5;
+            foreach (String c in words)
+            {
+                if (c.Length > longwordLimit)
+                {
+                    longword += "," + c;
+                    longwordLimit = c.Length;
+                    continue;
+                }
+            }
+            return longword;
+        }
     }
 }

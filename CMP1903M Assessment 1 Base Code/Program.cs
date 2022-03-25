@@ -13,6 +13,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         {
             // Gets the text from manual and file. This is used for the Report so it can directly send it across.
             string text;
+            string longwords;
 
             // Choosing the input type
             string input_type;
@@ -43,9 +44,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                     // FOR MANUAL
                     parameters = analyse.analyseText(input.manualTextInput());
                     text = input.getText();
+                    longwords = analyse.LongWords(text);
 
                     //Report the results of the analysis
-                    Report report = new Report(text, parameters);
+                    Report report = new Report(text, parameters, longwords);
                     report.OutputConsole();
                     break;
                 }
@@ -54,9 +56,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                     // FOR FILE
                     parameters = analyse.analyseText(input.fileTextInput(""));
                     text = input.getText();
+                    longwords = analyse.LongWords(text);
 
                     //Report the results of the analysis
-                    Report report = new Report(text, parameters);
+                    Report report = new Report(text, parameters, longwords);
                     report.OutputConsole();
                     break;
                 }

@@ -13,13 +13,18 @@ namespace CMP1903M_Assessment_1_Base_Code
         //eg.   public void outputConsole(List<int>)
 
         // Variables
+        string longwords;
         string text;
         List<int> parameters;
 
-        public Report(string Text, List<int> Parameters)
+        // Makes a new file
+        StreamWriter sw = new StreamWriter("longwords.txt");
+
+        public Report(string Text, List<int> Parameters, string Longwords)
         {
             // Text is what you inputed in manual text
             text = Text;
+            longwords = Longwords;
 
             // Parameters is the list of results from analyse
             parameters = Parameters;
@@ -49,7 +54,11 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
                 Console.WriteLine(reports);
             }
-          
+
+            // Generating a file for long words
+            Console.WriteLine("The Longest words are in a file.");
+            sw.WriteLine(longwords);
+            sw.Flush();
         }
     }
 }
