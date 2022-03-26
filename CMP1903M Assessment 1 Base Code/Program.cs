@@ -41,9 +41,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                 }
                 else if (input_type == "y")
                 {
+                    input.manualTextInput();
                     // FOR MANUAL
-                    parameters = analyse.analyseText(input.manualTextInput());
                     text = input.getText();
+                    parameters = analyse.analyseText(text);
                     longwords = analyse.LongWords(text);
 
                     //Report the results of the analysis

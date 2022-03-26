@@ -56,8 +56,9 @@ namespace CMP1903M_Assessment_1_Base_Code
             }
 
             // Generating a file for long words
-            Console.WriteLine("The Longest words are in a file.");
-            sw.WriteLine(longwords);
+            Console.WriteLine("\nFile created. It's called 'longwords'.\nYou'll find the file located in: CMP1903M Assessment 1 Base Code / bin / Debug / net6.0.");
+
+            sw.WriteLine("Long words file: \n" + longwords);
             sw.Flush();
         }
     }

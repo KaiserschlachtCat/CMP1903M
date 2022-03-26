@@ -19,7 +19,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         {
             //List of integers to hold the first five measurements:
             //Initialise all the values in the list to '0'
-            for(int i = 0; i<7; i++)
+            for(int i = 0; i<8; i++)
             {
                 values.Add(0);
             }
@@ -87,14 +87,14 @@ namespace CMP1903M_Assessment_1_Base_Code
         public string LongWords(string longwords)
         {
             string line = longwords;
-            string[] words = line.Split(new[] { ' ' }, StringSplitOptions.None);
+            string[] longwordsArray = line.Split(new[] { ' ' }, StringSplitOptions.None);
             string longword = "";
             int longwordLimit = 5;
-            foreach (String c in words)
+            foreach (String c in longwordsArray)
             {
-                if (c.Length > longwordLimit)
+                if (c.Length >= longwordLimit)
                 {
-                    longword += "," + c;
+                    longword += " - " + c;
                     longwordLimit = c.Length;
                     continue;
                 }
